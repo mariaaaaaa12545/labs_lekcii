@@ -1,0 +1,38 @@
+import random
+#1, 2
+a = [random.randint(50,100) for x in range(20)]
+b = [random.randint(1,1000) for x in range(1000)]
+
+def y(a):
+    if len(a)<=1:
+        return a
+    x = a[0]
+    minn, maxx = [i for i in a if i<x], [i for i in a if i>x]
+    return y(minn)+[x]+y(maxx)
+
+print(y(a), y(b))
+
+
+#3
+a = [[random.randint(5, 61) for b in range(5)]for i in range (4)]
+
+def m(a):
+    if len(a) <= 1:
+        return a
+    x = a[0][0]
+    minn = [i for i in a if i[0] < x]
+    maxx = [i for i in a if i[0] > x]
+    return m(minn) + [a[0]] + m(maxx)
+
+print(m(a))
+
+#4
+a = ["Вяткина Мария",
+    "Палханова Надежда",
+    "Простякова Татьяна",
+    "Морозова Вероника",
+    "Макарова Мария"]
+a = sorted(a)
+
+for i in a:
+    print(i)
