@@ -1,0 +1,65 @@
+#1
+import random
+n = random.randint(1,10)
+print('n: ', n)
+k=0
+def f(n,k):
+    k+=1
+    if k<n:
+        return k, f(n,k)
+    else:
+        return(n)
+
+print(f(n,k))
+    
+#2
+a,b = random.randint(-10,10), random.randint(-10,10)
+print('a:', a, ', b: ',b)
+if a < b:
+    k=a-1
+else:
+    k=b-1
+
+def f(a,b,k):
+    if a < b:
+        if k < b:
+            k+=1
+            return k, f(a,b,k)
+        else:
+            return b
+    else:
+        if k < a:
+            k+=1
+            return k, f(a,b,k)
+        else:
+            return a
+print(f(a,b,k))
+
+
+#3
+n = random.randint(1,9999)
+print('n: ', n)
+def f(n):
+  if n == 0:
+    return 0
+  return (n % 10) + f(n // 10)
+ 
+print(f(n))
+
+
+#4
+
+n=random.randint(2,25)
+print('n: ',n)
+
+def f4(n,d=2):
+    if d>n//2:
+        print(n)
+    elif n%d==0:
+        print(d)
+        return f4(n//d,d)
+    else:
+        return f4(n,d+1)
+        
+f4(n)
+    
