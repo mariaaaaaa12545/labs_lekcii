@@ -1,0 +1,37 @@
+import random as rnd
+
+#1
+arr = [rnd.randint(2, 103) for x in range(10)]
+print("массив: ", arr) 
+for i in range(len(arr)): # сортировка выбором по возрастанию
+    idx = i # последний индекс сортированной части
+    for j in range(i + 1, len(arr)):
+        if arr[j] < arr[idx]:
+            idx = j
+    arr[i], arr[idx] = arr[idx], arr[i]
+print("отсортированный массив:", arr)
+
+
+
+#2
+m = [rnd.randint(0, 100) for x in range(10)]
+print("массив: ", m)
+for i in range(len(m)): # сортировка выбором по убыванию
+    idx = i # последний индекс сортированной части
+    for j in range(i + 1, len(m)):
+        if m[j] > m[idx]:
+            idx = j
+    m[i], m[idx] = m[idx], m[i]
+print("отсортированный массив:", m)
+
+#3
+p = ["34-56-78", "12-34-56", "23-45-67", "12-30-00", "89-01-23"]
+print("телефоны: ", p)
+print("телефон: ", p)
+for i in range(len(p)): # сортировка выбором по возрастанию
+    idx = i # последний индекс сортированной части
+    for j in range(i + 1, len(p)):
+        if p[j] < p[idx]:
+            idx = j
+    p[i], p[idx] = p[idx], p[i]
+print("отсортированный массив:", p)
